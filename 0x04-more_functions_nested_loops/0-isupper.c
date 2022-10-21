@@ -6,16 +6,16 @@
  */
 int _isupper(int c)
 {
-	int i = 0;
+        c = 0;
 	char a;
 
 	for (a = 'A'; a <= 'Z';  a++)
 	{
 		if (a >= 'A' && a <= 'Z')
 		{
-			int i = 1;
+		       	c = 1;
 		}
 	}
-	return i;
+	return (c);
 }
 
