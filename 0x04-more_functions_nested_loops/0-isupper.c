@@ -6,9 +6,9 @@
  */
 int _isupper(int c)
 {
-        c = 0;
-	char a;
-
+	char a; 
+       
+        c = 0;	
 	for (a = 'A'; a <= 'Z';  a++)
 	{
 		if (a >= 'A' && a <= 'Z')
