@@ -6,9 +6,6 @@
  */
 int _isdigit(int c)
 {
-	int i;
-
-	c = 0;
 	if (i >= 0 && i <= 9)
 	{
 		c = 1
