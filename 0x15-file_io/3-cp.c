@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	while (ard == 1024)
 	{
 		ard = read(file_from, buf, 1024);
-		awr = write(file_to, buf, 1024);
+		awr = write(file_to, buf, ard);
 		if (ard == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -47,6 +47,7 @@ int main(int argc, char **argv)
 		}
 	}
 	close_file = close(file_from);
+
 	if (close_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
