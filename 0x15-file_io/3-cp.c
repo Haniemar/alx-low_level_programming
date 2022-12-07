@@ -9,7 +9,7 @@
 int main(int argc, char **argv)
 {
 	int file_to, file_from;
-	ssize_t ard, awr, close_file;
+	ssize_t ard = 1024, awr, close_file;
 	char buf[1024];
 
 	if (argc != 3)
@@ -26,10 +26,9 @@ int main(int argc, char **argv)
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 		exit(99);
 	}
-	ard = 1024;
 
 	while (ard == 1024)
 	{
@@ -42,7 +41,7 @@ int main(int argc, char **argv)
 		}
 		if (awr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			exit(99);
 		}
 	}
